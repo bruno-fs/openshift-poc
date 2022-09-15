@@ -1,0 +1,34 @@
+[tool.poetry]
+name = "openshift-poc"
+version = "0.1.0"
+description = ""
+authors = ["Bruno Ciconelle <bciconel@redhat.com>"]
+readme = "README.md"
+packages = [{include = "openshift_poc"}]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+openshift = "^0.13.1"
+flatten-dict = "^0.4.2"
+pandas = "^1.5.2"
+tabulate = "^0.9.0"
+darker = "^1.5.1"
+python-dotenv = "^0.21.0"
+jupyter = {extras = ["notebook"], version = "^1.0.0"}
+
+
+[tool.poetry.group.dev.dependencies]
+ipykernel = "^6.15.2"
+rich = "^12.5.1"
+isort = "^5.10.1"
+black = {extras = ["jupyter"], version = "^22.8.0"}
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.isort]
+profile = "black"
+
+[tool.darker]
+isort = true
